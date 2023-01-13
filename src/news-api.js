@@ -1,12 +1,13 @@
 import Notiflix from 'notiflix';
+import LoadMoreBtn from "./loadMoreBtn";
+
+
+const loadMoreBtn = new LoadMoreBtn({selector: ".load-more", hidden: true})
+
 
 const API_KEY = '21675881-9f2314d809854342b3af65054' 
  const BASE_URL = 'https://pixabay.com/api'
-const options = {
-    headers: {
-        Authorization: API_KEY,
-    }
-}
+
 
 
 export default class NewsApi {
@@ -34,13 +35,22 @@ export default class NewsApi {
     }
 
    incrementPage() {
-       this.page += 1;
-     /*   this.fetchPhotosPixabey().then(data => {
+   this.page += 1;
+       const numberOfHits = this.page * 40;
+    
+       
+       this.fetchPhotosPixabey().then(data => {
            console.log(data.totalHits)
-           if (this.page === data.totalHits) {
-           alert("We're sorry, but you've reached the end of search results.")
-       }
-       }) */
+           if (numberOfHits > data.totalHits) {
+              
+              Notiflix.Notify.info("We're sorry, but you've reached the end of search results.")
+               loadMoreBtn.hide();
+               return
+           } else {
+               loadMoreBtn.show()
+           }
+       })
+    
 }
 
     resetPage(){
