@@ -1,0 +1,106 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+        Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    line-height: 1.5;
+    color: #2a2a2a;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+   /*  height: auto; */
+border-radius: 5px;
+}
+
+.search-form {
+    display: flex;
+    justify-content: center;
+    padding: 8px;
+    margin-bottom: 24px;
+    background-color: rgb(94, 65, 212);
+}
+
+
+
+
+.button {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* .button */.is-hidden {
+    display: none;
+}
+
+.button>.spinner.is-hidden {
+    display: none;
+}
+
+/* Article List */
+.articles {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 20px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    max-width: calc(100vw - 80px);
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+}
+
+.articles li {
+    height: 450px;
+    overflow: hidden;
+}
+
+/* .articles img {
+    display: block;
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+} */
+
+/* .articles a {
+    text-decoration: none;
+    color: #2a2a2a;
+} */
+
+.gallery{
+    display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+  
+}
+
+
+.photo-card {
+   display: block;
+   width: 300px;
+    margin: 15px;
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+
+
+}
+.photo-card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+.info-item{
+    display: block;
+    font-size: 14px;
+    font-weight: 400;
+    border-radius: 5px;
+   border: 5px black
+}
+.info{
+    padding: 2px 16px;
+}
