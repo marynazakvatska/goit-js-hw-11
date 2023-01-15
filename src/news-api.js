@@ -36,13 +36,14 @@ export default class NewsApi {
 
    incrementPage() {
    this.page += 1;
-       const numberOfHits = this.page * 40;
+       const numberOfHits = this.page * 40 - 40;
     
        
        this.fetchPhotosPixabey().then(data => {
+           console.log(data)
            console.log(data.totalHits)
            if (numberOfHits > data.totalHits) {
-              
+             this.incrementPage
               Notiflix.Notify.info("We're sorry, but you've reached the end of search results.")
                loadMoreBtn.hide();
                return

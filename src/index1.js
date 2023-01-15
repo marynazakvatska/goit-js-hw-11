@@ -40,6 +40,7 @@ function onSubmit(e) {
           Notiflix.Notify.failure('Sorry, there are no images matching your search query. Please try again.')
         return
         }
+
         newsApi.incrementPage()   
         createMarkup(data.hits)
     })
